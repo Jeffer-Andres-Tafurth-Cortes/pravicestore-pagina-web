@@ -1,0 +1,162 @@
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f3f8fc; /* fondo suave, corporativo */
+}
+
+/* TITULO */
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #004a80; /* azul corporativo */
+}
+
+/* SUBTITULO */
+.subtitle {
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD GENERAL */
+.card {
+  padding: 30px 22px;
+  border-radius: 18px;
+  background: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  border-color: #f4c300; /* borde dorado al hover */
+}
+
+/* PACK EXPRESS */
+.express {
+  background: #e8f4ff; /* azul claro suave */
+  border-left: 6px solid #5eb3e4;
+}
+
+/* PACK ESENCIAL */
+.essential {
+  background: #fffbea; /* amarillo muy suave */
+  border-left: 6px solid #f4c300;
+}
+
+/* PACK PREMIUM */
+.premium {
+  background: #fff7e0; /* fondo premium dorado pastel */
+  border-left: 6px solid #c4911a; /* dorado oscuro */
+}
+
+/* BADGE MÁS RECOMENDADO */
+.recommended {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  background: #f7c600; /* amarillo vibrante */
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* PRECIO */
+.price {
+  font-size: 30px;
+  font-weight: 800;
+  color: #004a80;
+  margin: 8px 0;
+}
+
+/* TIEMPO */
+.timeBadge {
+  background: #e1e9ef;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin: 12px auto;
+  width: fit-content;
+  color: #004a80;
+  font-weight: 600;
+}
+
+/* DESCRIPCIÓN */
+.desc {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* LISTA */
+.packsList {
+  text-align: left;
+  margin: 15px auto;
+  padding: 0;
+  list-style: none;
+  max-width: 230px;
+}
+
+/* ITEMS DE LISTA */
+.itemPack {
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #000;
+}
+
+/* BOTÓN */
+.buyButton {
+  margin-top: auto;
+  background: #004a80; /* azul corporativo */
+  color: white;
+  padding: 12px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.buyButton:hover {
+  background: #003b68;
+  transform: translateY(-2px);
+}
+
+/* NOTA FINAL */
+.note {
+  margin-top: 40px;
+  background: #004a80;
+  color: white;
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

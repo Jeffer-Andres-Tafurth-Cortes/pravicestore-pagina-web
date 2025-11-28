@@ -1,0 +1,133 @@
+.problemSection {
+  background: #f5f9fc; /* fondo claro ligeramente azulado */
+  padding: 110px 20px;
+  text-align: center;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* ICONO SUPERIOR */
+.iconTop {
+  font-size: 48px;
+  color: #f4c300; /* amarillo dorado */
+  margin-bottom: 25px;
+}
+
+/* TITULO */
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #004a80; /* azul corporativo */
+  margin-bottom: 18px;
+}
+
+/* TEXTO PRINCIPAL */
+.description {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 auto 25px;
+}
+
+/* TEXTO AMARILLO */
+.danger {
+  color: #f7c600;
+  font-weight: 700;
+}
+
+/* PREGUNTAS */
+.question {
+  font-size: 17px;
+  margin: 6px 0;
+  color: #555;
+}
+
+/* ALERTA */
+.alertBox {
+  display: inline-block;
+  padding: 16px 28px;
+  border: 2px solid #c4911a; /* dorado oscuro */
+  border-radius: 12px;
+  background: #fff;
+  color: #c4911a;
+  font-weight: 600;
+  max-width: 720px;
+  font-size: 16px;
+  transition: all 0.25s ease;
+  margin: 35px auto 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.alertBox:hover {
+  background: #c4911a;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  max-width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* TARJETAS */
+.card {
+  padding: 25px 20px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  border-bottom: 4px solid #004a80; /* acento azul */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+  border-bottom-color: #f4c300; /* cambia a amarillo para destacar */
+}
+
+/* TÍTULO TARJETA */
+.card h3 {
+  margin: 18px 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #004a80;
+  transition: color 0.2s ease;
+}
+
+.card h3:hover {
+  color: #f4c300;
+}
+
+/* TEXTO TARJETA */
+.card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ICONO TARJETA */
+.icon {
+  font-size: 46px;
+  color: #5eb3e4; /* azul claro */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .alertBox {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+}
