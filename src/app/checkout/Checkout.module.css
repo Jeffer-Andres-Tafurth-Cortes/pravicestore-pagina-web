@@ -1,0 +1,184 @@
+/* ======= CONTENEDOR PRINCIPAL ======= */
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  background: #f5f7fa;
+  justify-content: center;
+  color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 880px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+/* ======= SECCIÓN DE FORMULARIO ======= */
+.formSection {
+  flex: 2;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  border: 2px solid #5eb3e4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #004a80;
+}
+
+.subtitle {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #004a80;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #5eb3e4;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #004a80;
+  box-shadow: 0 0 5px rgba(0, 74, 128, 0.3);
+}
+
+.label {
+  color: #004a80;
+  font-weight: 600;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ======= SECCIÓN DE PEDIDO ======= */
+.orderSection {
+  flex: 1;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  border: 2px solid #5eb3e4;
+  height: fit-content;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summary {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.thead {
+  background: #004a80;
+  color: #fff;
+}
+
+.tr {
+  border-bottom: 1px solid #cccccc;
+}
+
+.th,
+.td {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.totalRow {
+  background: #f4c300;
+  color: #000;
+  font-weight: 700;
+}
+
+.totalLabel {
+  font-weight: 700;
+}
+
+.totalValue {
+  text-align: right;
+}
+
+/* ======= WOMPI LOGO ======= */
+.gatewayLogo {
+  width: 120px;
+  margin: 10px 0 20px 0;
+}
+
+/* ======= PRIVACIDAD ======= */
+.privacy {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* ======= CHECKBOX ======= */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+}
+
+.checkboxLabel {
+  font-size: 0.95rem;
+  color: #000;
+}
+
+/* ======= BOTÓN DE PAGO ======= */
+.payBtn {
+  width: 100%;
+  background: #004a80;
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.payBtn:hover {
+  background: #00355e;
+}

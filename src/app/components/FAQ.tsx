@@ -15,6 +15,10 @@ interface FAQItem {
   answer: string;
 }
 
+const handleClick = () => {
+  window.open("https://api.whatsapp.com/send?phone=573206353180", "_blank");
+};
+
 export default function FAQ() {
   const faqs: FAQItem[] = [
     {
@@ -123,7 +127,9 @@ export default function FAQ() {
         {/* CAJA FINAL */}
         <div className={styles.box}>
           <p className={styles.boxTitle}>¿Tienes Otra Pregunta?</p>
-          <button className={styles.button}>Contactar Asesor</button>
+          <button className={styles.button} onClick={handleClick}>
+            Contactar Asesor
+          </button>
         </div>
       </section>
     </>

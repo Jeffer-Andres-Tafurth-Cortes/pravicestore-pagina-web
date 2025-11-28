@@ -7,6 +7,7 @@ import {
   faBook,
   faHeadset,
   faPlus,
+  faGift,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../context/CartContext";
 
@@ -23,7 +24,9 @@ export default function BonusExtras() {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>🎁 Bonus y Extras Incluidos</h2>
+      <h2 className={styles.title}>
+        <FontAwesomeIcon icon={faGift} /> Bonus y Extras Incluidos
+      </h2>
 
       <div className={styles.subtitle}>
         Todos los packs incluyen manual práctico + descarga inmediata. Además,
@@ -55,8 +58,8 @@ export default function BonusExtras() {
       <div className={styles.extraBox}>
         <h3>Extra opcional</h3>
         <p>
-          ➕ Añade 1 hora de asesoría personalizada con nuestro abogado experto
-          en Reforma Laboral.
+          <FontAwesomeIcon icon={faPlus} /> Añade 1 hora de asesoría
+          personalizada con nuestro abogado experto en Reforma Laboral.
         </p>
 
         <button

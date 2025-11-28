@@ -114,7 +114,12 @@ export default function CartPage() {
             <span className={styles.total}>${subtotal.toLocaleString()}</span>
           </div>
 
-          <button className={styles.checkout}>FINALIZAR COMPRA</button>
+          <button
+            className={styles.checkout}
+            onClick={() => (window.location.href = "/checkout")}
+          >
+            FINALIZAR COMPRA
+          </button>
         </div>
       </div>
 

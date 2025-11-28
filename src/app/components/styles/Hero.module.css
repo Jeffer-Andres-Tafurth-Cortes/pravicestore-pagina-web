@@ -39,6 +39,27 @@
   z-index: 1;
 }
 
+/* LOGO FIXED */
+.logoFixed {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+
+.logoFixed img {
+  height: 70px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  transition: transform 0.2s ease;
+}
+
+.logoFixed:hover img {
+  transform: scale(1.05);
+}
+
 .content {
   position: relative;
   z-index: 2;

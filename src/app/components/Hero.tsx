@@ -8,7 +8,6 @@ import { useCart } from "../context/CartContext";
 
 export default function Hero() {
   const { cart } = useCart();
-
   const itemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -18,6 +17,12 @@ export default function Hero() {
     >
       <div className={styles.overlay}></div>
 
+      {/* LOGO FIXED */}
+      <Link href="/" className={styles.logoFixed}>
+        <img src="/logo_pravice.png" alt="logo" />
+      </Link>
+
+      {/* BADGE */}
       <div className={styles.badge}>REFORMA LABORAL 2025</div>
 
       {/* ICONO CARRITO */}
