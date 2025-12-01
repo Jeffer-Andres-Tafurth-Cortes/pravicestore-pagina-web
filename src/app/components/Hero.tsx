@@ -10,6 +10,13 @@ export default function Hero() {
   const { cart } = useCart();
   const itemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
+  const scrollToPacks = () => {
+    const section = document.getElementById("packs");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className={styles.hero}>
       {/* VIDEO DE FONDO */}
@@ -17,7 +24,7 @@ export default function Hero() {
         <source src="/video-reforma-laboral.mp4" type="video/mp4" />
       </video>
 
-      {/* CAPA OSCURA (para opacidad) */}
+      {/* CAPA OSCURA */}
       <div className={styles.overlay}></div>
 
       {/* LOGO FIXED */}
@@ -43,7 +50,9 @@ export default function Hero() {
           Descarga tu pack jurídico, implementa paso a paso y protege tu
           empresa.
         </p>
-        <button className={styles.cta}>Comprar Ahora</button>
+        <button className={styles.cta} onClick={scrollToPacks}>
+          Comprar Ahora
+        </button>
       </div>
     </section>
   );

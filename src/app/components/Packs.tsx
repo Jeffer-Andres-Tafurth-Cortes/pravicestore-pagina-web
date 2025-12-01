@@ -78,7 +78,7 @@ export default function Packs() {
   const { addToCart } = useCart();
 
   return (
-    <section className={styles.section}>
+    <section id="packs" className={styles.section}>
       <h2 className={styles.title}>📊 Comparativo de Packs</h2>
       <p className={styles.subtitle}>
         Elige el pack que mejor se adapta a las necesidades de tu empresa
