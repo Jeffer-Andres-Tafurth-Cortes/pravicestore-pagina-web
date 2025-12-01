@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import { useCart } from "../context/CartContext";
+import { useToast } from "../components/Toast";
 
 type Pack = {
   id: number;
@@ -76,6 +77,7 @@ const packs: Pack[] = [
 
 export default function Packs() {
   const { addToCart } = useCart();
+  const { showToast } = useToast();
 
   return (
     <section id="packs" className={styles.section}>
@@ -120,15 +122,16 @@ export default function Packs() {
             {/* BOTÓN */}
             <button
               className={styles.buyButton}
-              onClick={() =>
+              onClick={() => {
                 addToCart({
                   id: pack.id,
                   name: pack.name,
                   price: pack.price,
                   image: pack.image,
                   quantity: 1,
-                })
-              }
+                });
+                showToast(`✔ ${pack.name} agregado al carrito`);
+              }}
             >
               Comprar {pack.name}
             </button>

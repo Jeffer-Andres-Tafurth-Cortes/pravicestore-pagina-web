@@ -10,9 +10,11 @@ import {
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../context/CartContext";
+import { useToast } from "../components/Toast";
 
 export default function BonusExtras() {
   const { addToCart } = useCart();
+  const { showToast } = useToast();
 
   const extraService = {
     id: 99,
@@ -64,7 +66,10 @@ export default function BonusExtras() {
 
         <button
           className={styles.extraButton}
-          onClick={() => addToCart(extraService)}
+          onClick={() => {
+            addToCart(extraService);
+            showToast(`✔ Asesoria agregada al carrito`);
+          }}
         >
           <FontAwesomeIcon icon={faPlus} /> Añadir asesoría extra
           <span>(+ $350.000)</span>

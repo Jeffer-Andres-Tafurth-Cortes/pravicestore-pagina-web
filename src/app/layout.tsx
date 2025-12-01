@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 import { CartProvider } from "./context/CartContext";
+import { ToastProvider } from "./components/Toast";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -32,10 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <CartProvider>
-          {children}
-          <Footer />
-        </CartProvider>
+        <ToastProvider>
+          <CartProvider>
+            {children}
+            <Footer />
+          </CartProvider>
+        </ToastProvider>
       </body>
     </html>
   );
