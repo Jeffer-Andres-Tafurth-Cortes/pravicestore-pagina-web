@@ -12,15 +12,32 @@ export default function CheckoutPage() {
   );
 
   const handlePayment = () => {
-    const reference = "ORDER-" + Date.now(); // ID único para cada pedido
+    if (subtotal <= 0) {
+      alert("Tu carrito está vacío.");
+      return;
+    }
 
-    const publicKey = "pub_test_xxxxxxxxxx"; // <-- REEMPLAZA con tu llave pública de Wompi
+    const reference = "ORDER-" + Date.now();
 
-    const url = `https://checkout.wompi.co/p/?public-key=${publicKey}&currency=COP&amount-in-cents=${
-      subtotal * 100
-    }&reference=${reference}`;
+    const publicKey = process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY;
 
-    window.location.href = url;
+    if (!publicKey) {
+      alert("Error: Falta la llave pública de Wompi.");
+      return;
+    }
+
+    const redirectUrl = "https://tu-dominio.com/confirmacion";
+
+    const checkoutUrl =
+      `https://checkout.wompi.co/p/?public-key=${publicKey}` +
+      `&currency=COP` +
+      `&amount-in-cents=${subtotal * 100}` +
+      `&reference=${reference}` +
+      `&redirect-url=${redirectUrl}`;
+
+    window.location.href = checkoutUrl;
+
+    console.log("Wompi key:", process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY);
   };
 
   return (
