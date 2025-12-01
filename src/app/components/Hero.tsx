@@ -11,10 +11,13 @@ export default function Hero() {
   const itemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <section
-      className={styles.hero}
-      style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-    >
+    <section className={styles.hero}>
+      {/* VIDEO DE FONDO */}
+      <video autoPlay loop muted playsInline className={styles.videoBg}>
+        <source src="/video-reforma-laboral.mp4" type="video/mp4" />
+      </video>
+
+      {/* CAPA OSCURA (para opacidad) */}
       <div className={styles.overlay}></div>
 
       {/* LOGO FIXED */}
@@ -33,6 +36,7 @@ export default function Hero() {
         )}
       </Link>
 
+      {/* CONTENIDO */}
       <div className={styles.content}>
         <h1>Cumple La Reforma Laboral 2025 Sin Riesgos Ni Sanciones</h1>
         <p>

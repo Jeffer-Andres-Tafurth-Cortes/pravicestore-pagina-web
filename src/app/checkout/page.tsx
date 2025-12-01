@@ -11,6 +11,18 @@ export default function CheckoutPage() {
     0
   );
 
+  const handlePayment = () => {
+    const reference = "ORDER-" + Date.now(); // ID único para cada pedido
+
+    const publicKey = "pub_test_xxxxxxxxxx"; // <-- REEMPLAZA con tu llave pública de Wompi
+
+    const url = `https://checkout.wompi.co/p/?public-key=${publicKey}&currency=COP&amount-in-cents=${
+      subtotal * 100
+    }&reference=${reference}`;
+
+    window.location.href = url;
+  };
+
   return (
     <div className={styles.container}>
       {/* FORMULARIO */}
@@ -114,7 +126,11 @@ export default function CheckoutPage() {
           </tbody>
         </table>
 
-        <img src="/wompi-logo.png" className={styles.gatewayLogo} alt="Wompi" />
+        <img
+          src="/Wompi_LogoPrincipal-2.png"
+          className={styles.gatewayLogo}
+          alt="Wompi"
+        />
 
         <p className={styles.privacy}>
           Tus datos personales se utilizarán para procesar tu pedido, mejorar tu
@@ -129,7 +145,9 @@ export default function CheckoutPage() {
           </label>
         </div>
 
-        <button className={styles.payBtn}>REALIZAR EL PEDIDO</button>
+        <button className={styles.payBtn} onClick={handlePayment}>
+          REALIZAR EL PEDIDO
+        </button>
       </div>
     </div>
   );
