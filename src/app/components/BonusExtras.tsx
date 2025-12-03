@@ -20,7 +20,7 @@ export default function BonusExtras() {
     id: 99,
     name: "Asesoría legal personalizada (1 hora)",
     price: 350000,
-    image: "/extras/asesoria.png",
+    image: "/logo_pravice.png",
     quantity: 1,
   };
 

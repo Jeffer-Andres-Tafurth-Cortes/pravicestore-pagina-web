@@ -26,7 +26,7 @@ const packs: Pack[] = [
     description: "Ideal para micro y pequeñas empresas.",
     color: styles.express,
     time: "15 Minutos de asesoría gratuita",
-    image: "/packs/express.png",
+    image: "/logo_pravice.png",
     items: [
       "Contratos Laborales a término fijo (Modelo Actualizado).",
       "Manual básico de implementación (4 pasos críticos).",
@@ -43,7 +43,7 @@ const packs: Pack[] = [
     description: "Protege frente a sanciones frecuentes.",
     color: styles.essential,
     time: "30 Minutos de asesoría gratuita",
-    image: "/packs/esencial.png",
+    image: "/logo_pravice.png",
     items: [
       "Todo el Pack Express.",
       "Reglamento interno del Trabajo (RIT - Versión estándar).",
@@ -61,7 +61,7 @@ const packs: Pack[] = [
     description: "Blindaje total frente a Mintrabajo.",
     color: styles.premium,
     time: "1 hora de asesoría personalizada",
-    image: "/packs/premium.png",
+    image: "/logo_pravice.png",
     items: [
       "Todo el Pack Esencial.",
       "Contratos: Fijo + Indefinido + Obra/Labor.",
