@@ -21,8 +21,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Inicio reforma laboral 1",
-  description: "Inicio reforma laboral 1",
+  title: "Inicio reforma laboral",
+  description: "Inicio reforma laboral",
+  keywords: [
+    "Reforma Laboral",
+    "Multas Millonarias",
+    "Clausuras Temporales",
+    "Riesgos Laborales",
+    "Derecho Laboral",
+  ],
+  openGraph: {
+    title: "Inicio reforma laboral",
+    description: "Inicio reforma laboral",
+    url: "",
+    siteName: "Inicio reforma laboral",
+    images: [
+      {
+        url: "/logo_pravice.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "es_CO",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
