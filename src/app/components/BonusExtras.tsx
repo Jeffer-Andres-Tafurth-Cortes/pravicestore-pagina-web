@@ -9,6 +9,8 @@ import {
   faPlus,
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
 import { useToast } from "../components/Toast";
 
@@ -26,38 +28,96 @@ export default function BonusExtras() {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>
+      {/* TÍTULO */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className={styles.title}
+      >
         <FontAwesomeIcon icon={faGift} /> Bonus y Extras Incluidos
-      </h2>
+      </motion.h2>
 
-      <div className={styles.subtitle}>
+      {/* SUBTÍTULO */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className={styles.subtitle}
+      >
         Todos los packs incluyen manual práctico + descarga inmediata. Además,
         asesoría gratuita incluida según el plan que elijas.
-      </div>
+      </motion.div>
 
       {/* TARJETAS */}
-      <div className={styles.cards}>
-        <div className={styles.card}>
+      <motion.div
+        className={styles.cards}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
+        {/** CARD 1 */}
+        <motion.div
+          className={styles.card}
+          variants={{
+            hidden: { opacity: 0, scale: 0.9 },
+            show: { opacity: 1, scale: 1 },
+          }}
+          transition={{ duration: 0.4 }}
+        >
           <FontAwesomeIcon icon={faDownload} className={styles.icon} />
           <h3>Descarga inmediata</h3>
           <p>Acceso instantáneo después del pago confirmado.</p>
-        </div>
+        </motion.div>
 
-        <div className={styles.card}>
+        {/** CARD 2 */}
+        <motion.div
+          className={styles.card}
+          variants={{
+            hidden: { opacity: 0, scale: 0.9 },
+            show: { opacity: 1, scale: 1 },
+          }}
+          transition={{ duration: 0.4 }}
+        >
           <FontAwesomeIcon icon={faBook} className={styles.icon} />
           <h3>Manual práctico</h3>
           <p>Guía paso a paso para implementar todo correctamente.</p>
-        </div>
+        </motion.div>
 
-        <div className={styles.card}>
+        {/** CARD 3 */}
+        <motion.div
+          className={styles.card}
+          variants={{
+            hidden: { opacity: 0, scale: 0.9 },
+            show: { opacity: 1, scale: 1 },
+          }}
+          transition={{ duration: 0.4 }}
+        >
           <FontAwesomeIcon icon={faHeadset} className={styles.icon} />
           <h3>Asesoría incluida</h3>
           <p>Soporte experto según tu plan elegido.</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* BLOQUE EXTRA */}
-      <div className={styles.extraBox}>
+      {/* EXTRA OPCIONAL */}
+      <motion.div
+        className={styles.extraBox}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
         <h3>Extra opcional</h3>
         <p>
           <FontAwesomeIcon icon={faPlus} /> Añade 1 hora de asesoría
@@ -74,7 +134,7 @@ export default function BonusExtras() {
           <FontAwesomeIcon icon={faPlus} /> Añadir asesoría extra
           <span>(+ $350.000)</span>
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }

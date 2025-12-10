@@ -3,6 +3,7 @@
 import styles from "./styles/Packs.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 import { useCart } from "../context/CartContext";
 import { useToast } from "../components/Toast";
@@ -80,48 +81,103 @@ export default function Packs() {
   const { showToast } = useToast();
 
   return (
-    <section id="packs" className={styles.section}>
-      <h2 className={styles.title}>📊 Comparativo de Packs</h2>
-      <p className={styles.subtitle}>
-        Elige el pack que mejor se adapta a las necesidades de tu empresa
-      </p>
+    <motion.section
+      id="packs"
+      className={styles.section}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <motion.h2
+        className={styles.title}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        📊 Comparativo de Packs
+      </motion.h2>
 
-      <div className={styles.grid}>
+      <motion.p
+        className={styles.subtitle}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        Elige el pack que mejor se adapta a las necesidades de tu empresa
+      </motion.p>
+
+      {/* GRID con STAGGER */}
+      <motion.div
+        className={styles.grid}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.18,
+            },
+          },
+        }}
+      >
         {packs.map((pack, index) => (
-          <div key={pack.id} className={`${styles.card} ${pack.color}`}>
-            {/* BADGE */}
+          <motion.div
+            key={pack.id}
+            className={`${styles.card} ${pack.color}`}
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+            }}
+          >
+            {/* BADGE CON EFECTO POP */}
             {index === 2 && (
-              <span className={styles.recommended}>
+              <motion.span
+                className={styles.recommended}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.4, ease: "backOut", delay: 0.3 }}
+                viewport={{ once: true }}
+              >
                 <FontAwesomeIcon icon={faStar} /> Más Recomendado
-              </span>
+              </motion.span>
             )}
 
-            {/* NOMBRE */}
             <h3>{pack.name}</h3>
 
-            {/* PRECIO */}
             <div className={styles.price}>
               ${pack.price.toLocaleString("es-CO")}
             </div>
 
-            {/* DESCRIPCIÓN */}
             <p className={styles.desc}>{pack.description}</p>
 
-            {/* TIEMPO */}
             <div className={styles.timeBadge}>{pack.time}</div>
 
-            {/* LISTA */}
             <ul className={styles.packsList}>
               {pack.items.map((item, i) => (
-                <li key={i} className={styles.itemPack}>
+                <motion.li
+                  key={i}
+                  className={styles.itemPack}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                  viewport={{ once: true }}
+                >
                   <FontAwesomeIcon icon={faCheck} /> {item}
-                </li>
+                </motion.li>
               ))}
             </ul>
 
             {/* BOTÓN */}
-            <button
+            <motion.button
               className={styles.buyButton}
+              whileTap={{ scale: 0.92 }}
               onClick={() => {
                 addToCart({
                   id: pack.id,
@@ -134,16 +190,21 @@ export default function Packs() {
               }}
             >
               Comprar {pack.name}
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* MENSAJE */}
-      <div className={styles.note}>
+      <motion.div
+        className={styles.note}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         💡 Todos nuestros packs están diseñados y validados por abogados
         especialistas en Derecho Laboral.
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
