@@ -1,4 +1,7 @@
+"use client";
+
 import styles from "./styles/Testimonials.module.css";
+import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const testimonials = [
@@ -27,12 +30,43 @@ export default function Testimonials() {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Lo Que Dicen Nuestros Clientes</h2>
-      <p className={styles.subtitle}>Más de 500 empresas ya están protegidas</p>
+      {/* Title */}
+      <motion.h2
+        className={styles.title}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65 }}
+        viewport={{ once: true }}
+      >
+        Lo Que Dicen Nuestros Clientes
+      </motion.h2>
 
+      {/* Subtitle */}
+      <motion.p
+        className={styles.subtitle}
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.15 }}
+        viewport={{ once: true }}
+      >
+        Más de 500 empresas ya están protegidas
+      </motion.p>
+
+      {/* Cards */}
       <div className={styles.grid}>
         {testimonials.map((t, index) => (
-          <div key={index} className={styles.card}>
+          <motion.div
+            key={index}
+            className={styles.card}
+            initial={{ opacity: 0, scale: 0.9, y: 25 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.15,
+            }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03 }}
+          >
             <div className={styles.stars}>{"★".repeat(t.stars)}</div>
 
             <p className={styles.text}>{t.text}</p>
@@ -42,7 +76,7 @@ export default function Testimonials() {
               <p className={styles.role}>{t.role}</p>
               <p className={styles.company}>{t.company}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

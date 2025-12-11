@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const { cart } = useCart();
@@ -28,31 +29,70 @@ export default function Hero() {
       <div className={styles.overlay}></div>
 
       {/* LOGO FIXED */}
-      <Link href="/" className={styles.logoFixed}>
-        <img src="/logo_pravice.png" alt="logo" />
-      </Link>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Link href="/" className={styles.logoFixed}>
+          <img src="/logo_pravice.png" alt="logo" />
+        </Link>
+      </motion.div>
 
       {/* BADGE */}
-      <div className={styles.badge}>REFORMA LABORAL 2025</div>
+      <motion.div
+        className={styles.badge}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        REFORMA LABORAL 2025
+      </motion.div>
 
       {/* ICONO CARRITO */}
-      <Link href="/cart" className={styles.cartIcon}>
-        <FontAwesomeIcon icon={faShoppingCart} />
-        {itemsCount > 0 && (
-          <span className={styles.badgeCount}>{itemsCount}</span>
-        )}
-      </Link>
+      <motion.div
+        initial={{ opacity: 0, x: 25 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <Link href="/cart" className={styles.cartIcon}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+          {itemsCount > 0 && (
+            <span className={styles.badgeCount}>{itemsCount}</span>
+          )}
+        </Link>
+      </motion.div>
 
       {/* CONTENIDO */}
       <div className={styles.content}>
-        <h1>Cumple La Reforma Laboral 2025 Sin Riesgos Ni Sanciones</h1>
-        <p>
+        <motion.h1
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          Cumple La Reforma Laboral 2025 Sin Riesgos Ni Sanciones
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+        >
           Descarga tu pack jurídico, implementa paso a paso y protege tu
           empresa.
-        </p>
-        <button className={styles.cta} onClick={scrollToPacks}>
+        </motion.p>
+
+        <motion.button
+          className={styles.cta}
+          onClick={scrollToPacks}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.96 }}
+        >
           Comprar Ahora
-        </button>
+        </motion.button>
       </div>
     </section>
   );
