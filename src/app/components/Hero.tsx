@@ -21,7 +21,15 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       {/* VIDEO DE FONDO */}
-      <video autoPlay loop muted playsInline className={styles.videoBg}>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-label="Video explicativo sobre la Reforma Laboral 2026 en Colombia"
+        poster="/poster-reforma-laboral.jpg"
+        className={styles.videoBg}
+      >
         <source src="/video-reforma-laboral.mp4" type="video/mp4" />
       </video>
 
@@ -35,7 +43,10 @@ export default function Hero() {
         transition={{ duration: 0.7 }}
       >
         <Link href="/" className={styles.logoFixed}>
-          <img src="/logo_pravice.png" alt="logo" />
+          <img
+            src="/logo_pravice.png"
+            alt="Pravice Abogados - Implementación Reforma Laboral 2026"
+          />
         </Link>
       </motion.div>
 
@@ -70,7 +81,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Cumple La Reforma Laboral 2026 Sin Riesgos Ni Sanciones
+          Implementación legal de la Reforma Laboral 2026 para empresas en
+          Colombia
         </motion.h1>
 
         <motion.p
@@ -78,8 +90,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
         >
-          Descarga tu pack jurídico, implementa paso a paso y protege tu
-          empresa.
+          Guía jurídica práctica para implementar la Reforma Laboral 2026 en tu
+          empresa, cumplir la normativa vigente y evitar sanciones legales o
+          laborales.
         </motion.p>
 
         <motion.button
@@ -91,7 +104,7 @@ export default function Hero() {
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.96 }}
         >
-          Comprar Ahora
+          Comprar pack legal Reforma Laboral 2026
         </motion.button>
       </div>
     </section>
