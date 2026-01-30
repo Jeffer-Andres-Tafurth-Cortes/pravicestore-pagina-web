@@ -46,7 +46,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        REFORMA LABORAL 2025
+        REFORMA LABORAL 2026
       </motion.div>
 
       {/* ICONO CARRITO */}
@@ -70,7 +70,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Cumple La Reforma Laboral 2025 Sin Riesgos Ni Sanciones
+          Cumple La Reforma Laboral 2026 Sin Riesgos Ni Sanciones
         </motion.h1>
 
         <motion.p

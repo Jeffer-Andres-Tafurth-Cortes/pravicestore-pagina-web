@@ -38,7 +38,7 @@ export default function Intro() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        El Problema Que Enfrentan Las Empresas
+        El riesgo legal que enfrentan las empresas con la Reforma Laboral 2026
       </motion.h2>
 
       {/* DESCRIPCION */}
@@ -49,9 +49,14 @@ export default function Intro() {
         transition={{ duration: 0.6, delay: 0.15 }}
         viewport={{ once: true }}
       >
-        Con la nueva <strong>Reforma Laboral 2025</strong>, las empresas que no
-        implementen los cambios enfrentan
-        <span className={styles.danger}> multas millonarias y sanciones.</span>
+        Con la entrada en vigor de la{" "}
+        <strong>Reforma Laboral 2026 en Colombia</strong>, las empresas que no
+        actualicen sus procesos, contratos y políticas internas enfrentan
+        <span className={styles.danger}>
+          {" "}
+          multas económicas, sanciones administrativas y riesgos jurídicos
+          graves.
+        </span>
       </motion.p>
 
       {/* PREGUNTAS */}
@@ -62,7 +67,7 @@ export default function Intro() {
         transition={{ duration: 0.6, delay: 0.25 }}
         viewport={{ once: true }}
       >
-        ¿Tu empresa ya está preparada?
+        ¿Tu empresa ya está preparada para cumplir con la Reforma Laboral 2026?
       </motion.p>
 
       <motion.p
@@ -72,7 +77,8 @@ export default function Intro() {
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        ¿Tienes los contratos y manuales actualizados?
+        ¿Tus contratos laborales, reglamentos y manuales internos están
+        actualizados?
       </motion.p>
 
       {/* ALERT BOX */}
@@ -83,8 +89,10 @@ export default function Intro() {
         transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        Las empresas no preparadas enfrentan riesgos de hasta $50,000,000 en
-        multas y posibles clausuras temporales.
+        Las empresas que no cumplan con la normativa laboral vigente pueden
+        enfrentar multas de hasta <strong>$50.000.000</strong>, procesos
+        sancionatorios, demandas laborales y clausuras temporales de sus
+        operaciones.
       </motion.div>
 
       {/* GRID DE CARDS CON STAGGER */}
@@ -115,8 +123,11 @@ export default function Intro() {
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faDollarSign} />
           </div>
-          <h3>Multas Millonarias</h3>
-          <p>Sanciones económicas que pueden afectar fuertemente tu empresa.</p>
+          <h3>Multas y sanciones laborales</h3>
+          <p>
+            Incumplir la reforma laboral puede generar sanciones económicas
+            elevadas y afectar la estabilidad financiera de tu empresa.
+          </p>
         </motion.div>
 
         {/* CARD 2 */}
@@ -132,8 +143,11 @@ export default function Intro() {
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faBuilding} />
           </div>
-          <h3>Clausuras Temporales</h3>
-          <p>Suspensión de operaciones por incumplimiento.</p>
+          <h3>Clausuras y Suspensión de actividades</h3>
+          <p>
+            Las autoridades pueden ordenar la suspensión parcial o total de
+            operaciones por incumplimientos labores reiterados.
+          </p>
         </motion.div>
 
         {/* CARD 3 */}
@@ -149,8 +163,11 @@ export default function Intro() {
           <div className={styles.icon}>
             <FontAwesomeIcon icon={faShieldAlt} />
           </div>
-          <h3>Riesgos Legales</h3>
-          <p>Demandas laborales y problemas jurídicos.</p>
+          <h3>Demandas y riesgos jurídicos</h3>
+          <p>
+            La falta de actualización normativa incrementa el riesgo de demandas
+            laborales, procesos judiciales y conflictos legales.
+          </p>
         </motion.div>
       </motion.div>
     </motion.section>

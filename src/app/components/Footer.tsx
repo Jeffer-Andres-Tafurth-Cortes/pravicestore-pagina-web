@@ -22,7 +22,7 @@ export default function Footer() {
           <h1 className={styles.title}>No Arriesgues A Tu Empresa</h1>
 
           <p className={styles.subtitle}>
-            Cumple hoy con la Reforma Laboral 2025 y evita sanciones
+            Cumple hoy con la Reforma Laboral 2026 y evita sanciones
           </p>
 
           <div className={styles.banner}>
