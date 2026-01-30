@@ -2,7 +2,7 @@
 
 import styles from "./styles/Packs.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faCheck, faBuilding } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 import { useCart } from "../context/CartContext";
@@ -24,7 +24,8 @@ const packs: Pack[] = [
     id: 1,
     name: "Pack Express",
     price: 299000,
-    description: "Ideal para micro y pequeñas empresas.",
+    description:
+      "Ideal para micro y pequeñas empresas que necesitan cumplir la Reforma Laboral 2026 sin sanciones.",
     color: styles.express,
     time: "15 Minutos de asesoría gratuita",
     image: "/logo_pravice.png",
@@ -41,7 +42,8 @@ const packs: Pack[] = [
     id: 2,
     name: "Pack Esencial",
     price: 599000,
-    description: "Protege frente a sanciones frecuentes.",
+    description:
+      "Protección legal frente a sanciones frecuentes del Ministerio de Trabajo.",
     color: styles.essential,
     time: "30 Minutos de asesoría gratuita",
     image: "/logo_pravice.png",
@@ -59,7 +61,8 @@ const packs: Pack[] = [
     id: 3,
     name: "Full Premium",
     price: 999000,
-    description: "Blindaje total frente a Mintrabajo.",
+    description:
+      "Blindaje jurídico integral frente a fiscalizaciones del Mintrabajo.",
     color: styles.premium,
     time: "1 hora de asesoría personalizada",
     image: "/logo_pravice.png",
@@ -83,6 +86,8 @@ export default function Packs() {
   return (
     <motion.section
       id="packs"
+      aria-labelledby="packs-title"
+      aria-describedby="packs-description"
       className={styles.section}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -90,21 +95,25 @@ export default function Packs() {
       viewport={{ once: true }}
     >
       <motion.h2
+        id="packs-title"
         className={styles.title}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        📊 Comparativo de Packs
+        <FontAwesomeIcon icon={faBuilding} /> Comparativo de Packs Reforma
+        Laboral 2026
       </motion.h2>
 
       <motion.p
+        id="packs-description"
         className={styles.subtitle}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        Elige el pack que mejor se adapta a las necesidades de tu empresa
+        Elige el pack legal adecuado para cumplir la Reforma Laboral 2026 en
+        Colombia según el tamaño y nivel de riesgo de tu empresa.
       </motion.p>
 
       {/* GRID con STAGGER */}
@@ -140,6 +149,7 @@ export default function Packs() {
             {index === 2 && (
               <motion.span
                 className={styles.recommended}
+                aria-label="Pack más recomendado para cumplir la Reforma Laboral 2026"
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.4, ease: "backOut", delay: 0.3 }}
@@ -149,9 +159,12 @@ export default function Packs() {
               </motion.span>
             )}
 
-            <h3>{pack.name}</h3>
+            <h3>{pack.name} - reforma laboral 2026</h3>
 
-            <div className={styles.price}>
+            <div
+              className={styles.price}
+              aria-label={`Precio del ${pack.name} para implementación Reforma Laboral 2026`}
+            >
               ${pack.price.toLocaleString("es-CO")}
             </div>
 
@@ -189,7 +202,7 @@ export default function Packs() {
                 showToast(`✔ ${pack.name} agregado al carrito`);
               }}
             >
-              Comprar {pack.name}
+              Comprar {pack.name} Reforma Laboral 2026
             </motion.button>
           </motion.div>
         ))}
