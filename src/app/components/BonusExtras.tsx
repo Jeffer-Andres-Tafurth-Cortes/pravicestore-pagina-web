@@ -27,28 +27,36 @@ export default function BonusExtras() {
   };
 
   return (
-    <section className={styles.section}>
+    <section
+      className={styles.section}
+      aria-labelledby="bonus-title"
+      aria-describedby="bonus-description"
+    >
       {/* TÍTULO */}
       <motion.h2
+        id="bonus-title"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className={styles.title}
       >
-        <FontAwesomeIcon icon={faGift} /> Bonus y Extras Incluidos
+        <FontAwesomeIcon icon={faGift} /> Bonus y extras incluidos en los packs
+        Reforma Laboral 2026
       </motion.h2>
 
       {/* SUBTÍTULO */}
       <motion.div
+        id="bonus-description"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
         className={styles.subtitle}
       >
-        Todos los packs incluyen manual práctico + descarga inmediata. Además,
-        asesoría gratuita incluida según el plan que elijas.
+        Todos los packs legales para la Reforma Laboral 2026 incluyen descarga
+        inmediata, manual práctico de implementación y asesoría jurídica
+        gratuita según el plan elegido.
       </motion.div>
 
       {/* TARJETAS */}
@@ -76,9 +84,16 @@ export default function BonusExtras() {
           }}
           transition={{ duration: 0.4 }}
         >
-          <FontAwesomeIcon icon={faDownload} className={styles.icon} />
-          <h3>Descarga inmediata</h3>
-          <p>Acceso instantáneo después del pago confirmado.</p>
+          <FontAwesomeIcon
+            icon={faDownload}
+            className={styles.icon}
+            aria-label="Descarga inmediata de documentos legales"
+          />
+          <h3>Descarga inmediata de documentos legales</h3>
+          <p>
+            Acceso instantáneo a todos los formatos legales para cumplir la
+            Reforma Laboral 2026 una vez confirmado el pago
+          </p>
         </motion.div>
 
         {/** CARD 2 */}
@@ -90,9 +105,16 @@ export default function BonusExtras() {
           }}
           transition={{ duration: 0.4 }}
         >
-          <FontAwesomeIcon icon={faBook} className={styles.icon} />
-          <h3>Manual práctico</h3>
-          <p>Guía paso a paso para implementar todo correctamente.</p>
+          <FontAwesomeIcon
+            icon={faBook}
+            className={styles.icon}
+            aria-label="Descarga inmediata de documentos legales"
+          />
+          <h3>Manual práctico de implementación laboral</h3>
+          <p>
+            Guía jurídica paso a paso para implementar correctamente la Reforma
+            Laboral 2026 en tu empresa.
+          </p>
         </motion.div>
 
         {/** CARD 3 */}
@@ -104,9 +126,16 @@ export default function BonusExtras() {
           }}
           transition={{ duration: 0.4 }}
         >
-          <FontAwesomeIcon icon={faHeadset} className={styles.icon} />
-          <h3>Asesoría incluida</h3>
-          <p>Soporte experto según tu plan elegido.</p>
+          <FontAwesomeIcon
+            icon={faHeadset}
+            className={styles.icon}
+            aria-label="Descarga inmediata de documentos legales"
+          />
+          <h3>Asesoría legal incluida</h3>
+          <p>
+            Acompañamiento jurídico por abogados expertos en Derecho Laboral
+            según el pack contratado.
+          </p>
         </motion.div>
       </motion.div>
 
@@ -118,10 +147,11 @@ export default function BonusExtras() {
         transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <h3>Extra opcional</h3>
+        <h3>Asesoría legal personalizada adicional</h3>
         <p>
-          <FontAwesomeIcon icon={faPlus} /> Añade 1 hora de asesoría
-          personalizada con nuestro abogado experto en Reforma Laboral.
+          <FontAwesomeIcon icon={faPlus} /> Añade 1 hora de asesoría legal
+          personalizada con un abogado especialista en Reforma Laboral 2026 y
+          cumplimiento normativo.
         </p>
 
         <button
