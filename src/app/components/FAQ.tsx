@@ -24,40 +24,43 @@ export default function FAQ() {
     {
       question: "¿En qué formato recibo los documentos?",
       answer:
-        "Recibes todos los documentos en formato PDF para lectura y Word para que puedas editarlos según las necesidades específicas de tu empresa.",
+        "Recibes todos los documentos en formato PDF para lectura y en Word editable, para que puedas adaptarlos fácilmente a las necesidades específicas de tu empresa.",
     },
     {
-      question: "¿Cuánto tiempo tarda la carga?",
-      answer: "La entrega de los documentos es inmediata después del pago.",
-    },
-    {
-      question: "¿La asesoría se agenda sola?",
+      question: "¿Cuánto tiempo tarda la entrega de los documentos?",
       answer:
-        "Sí, después de la compra podrás elegir el día y hora disponible.",
+        "La entrega es inmediata una vez se confirma el pago. Podrás descargar los documentos al instante desde la plataforma.",
     },
     {
-      question: "¿Los documentos están actualizados a 2025?",
+      question: "¿Cómo se agenda la asesoría incluida?",
       answer:
-        "Sí, todos nuestros documentos están actualizados conforme a la normativa vigente.",
+        "Después de completar la compra, podrás seleccionar de forma autónoma el día y la hora disponibles para tu asesoría legal.",
     },
     {
-      question: "¿Qué pasa si tengo dudas después de comprar?",
+      question: "¿Los documentos están actualizados a la normativa vigente?",
       answer:
-        "Puedes contactar a nuestro equipo de soporte en cualquier momento.",
+        "Sí. Todos los documentos están actualizados conforme a la normativa laboral vigente y a los lineamientos aplicables de la Reforma Laboral 2026 en Colombia.",
     },
     {
-      question: "¿Hay garantía de devolución?",
+      question: "¿Qué pasa si tengo dudas después de realizar la compra?",
       answer:
-        "Sí, ofrecemos garantía en caso de presentarse inconvenientes verificables.",
+        "Puedes contactar a nuestro equipo de soporte y asesoría legal en cualquier momento para resolver tus inquietudes.",
     },
     {
-      question: "¿Los packs sirven para todo tipo de empresas?",
-      answer: "Sí, están diseñados para micro, pequeñas y medianas empresas.",
-    },
-    {
-      question: "¿Necesito conocimientos legales para implementar?",
+      question: "¿Ofrecen garantía de devolución?",
       answer:
-        "No, los documentos están listos para usar con instrucciones claras.",
+        "Sí. Ofrecemos garantía en caso de presentarse inconvenientes verificables relacionados con el acceso o el contenido de los documentos.",
+    },
+    {
+      question: "¿Los packs son útiles para cualquier tipo de empresa?",
+      answer:
+        "Sí. Los packs están diseñados para micro, pequeñas y medianas empresas de diferentes sectores económicos.",
+    },
+    {
+      question:
+        "¿Necesito conocimientos legales para implementar los documentos?",
+      answer:
+        "No. Los documentos incluyen instrucciones claras y un manual práctico que te guía paso a paso durante la implementación.",
     },
   ];
 
@@ -88,10 +91,17 @@ export default function FAQ() {
       </section>
 
       {/* FAQ */}
-      <section className={styles.section}>
-        <h2 className={styles.title}>Preguntas Frecuentes</h2>
-        <p className={styles.subtitle}>
-          Resolvemos las dudas más comunes de nuestros clientes.
+      <section
+        className={styles.section}
+        aria-labelledby="faq-title"
+        aria-describedby="faq-description"
+      >
+        <h2 id="faq-title" className={styles.title}>
+          Preguntas Frecuentes
+        </h2>
+        <p id="faq-description" className={styles.subtitle}>
+          Respuestas claras sobre los packs legales, la asesoría y el
+          cumplimiento…
         </p>
 
         <div className={styles.faqContainer}>
